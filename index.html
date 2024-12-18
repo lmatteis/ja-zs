@@ -29,7 +29,6 @@
         background-color: #dddddd;
         background-image: url(pics/noise-light.png);
         -webkit-font-smoothing: antialiased;
-        color: #4c4c4c;
       }
       .content img {
         width: 100%;
@@ -58,6 +57,21 @@
         flex-direction: column;
         width: 100%;
         height: 100%;
+        color: #d5cfab;
+      }
+      .mix {
+        mix-blend-mode: difference;
+      }
+      ul {
+        padding-left: 10px;
+        margin-left: 0;
+      }
+      a {
+        text-decoration: none;
+        border-bottom: 1px solid white;
+      }
+      a:visited {
+        color: white;
       }
       footer {
         background: #ddd;
@@ -109,11 +123,12 @@
   </head>
 
   <body>
-    <div class="main">
+    <div class="main mix">
       <div class="left">
         <h1><img class="logo" src="pics/LOGO_TRANS.png" /></h1>
         <div class="center">
-          <img class="tiny-icon" src="pics/instagram.png" />
+          <span><img class="tiny-icon" src="pics/instagram.png" /></span>
+
           <a href="https://www.instagram.com/jazsbikes">JA’ZS</a>
         </div>
         <ul>
