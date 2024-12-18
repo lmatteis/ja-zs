@@ -20,7 +20,7 @@
       body {
         margin: auto;
         font-family: "FuturaPTLight", Courier, monospace;
-        font-size: 14px;
+        font-size: 16px;
         letter-spacing: 0em;
         line-height: 1.2;
         font-weight: 300;
@@ -61,6 +61,13 @@
       }
       .mix {
         mix-blend-mode: difference;
+        z-index: 1;
+      }
+      .non-mix {
+        isolation: isolate;
+        mix-blend-mode: normal; /* Explicitly reset the blend mode */
+        position: relative; /* Create a stacking context for the child */
+        z-index: 2; /* Ensure the child is above the background */
       }
       ul {
         padding-left: 10px;
@@ -69,6 +76,7 @@
       a {
         text-decoration: none;
         border-bottom: 1px solid white;
+        color: white;
       }
       a:visited {
         color: white;
@@ -80,6 +88,9 @@
         font-size: 11px;
         background-color: #bcb3aa;
         background-image: url(pics/noise-light.png);
+        position: fixed;
+        bottom: 0;
+        width: 100%;
       }
       body,
       html {
@@ -127,7 +138,9 @@
       <div class="left">
         <h1><img class="logo" src="pics/LOGO_TRANS.png" /></h1>
         <div class="center">
-          <span><img class="tiny-icon" src="pics/instagram.png" /></span>
+          <span class="non-mix"
+            ><img class="tiny-icon" src="pics/instagram.png"
+          /></span>
 
           <a href="https://www.instagram.com/jazsbikes">JA’ZS</a>
         </div>
@@ -148,8 +161,8 @@
           help with the "hunch phone movement" of today's generation.
         </div>
       </div>
-      <footer>© JA’ZS, Inc. 2024; all rights reserved.</footer>
     </div>
+    <footer class="footer">© JA’ZS, Inc. 2024; all rights reserved.</footer>
 
     <div class="content">
       <div>
